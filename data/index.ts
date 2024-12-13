@@ -1,5 +1,3 @@
-// data/portfolio.ts
-
 export const projects = [
     {
       id: 1,
