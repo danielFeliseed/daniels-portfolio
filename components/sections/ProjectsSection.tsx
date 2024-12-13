@@ -10,15 +10,15 @@ export default function ProjectsSection() {
             <div className="max-w-6xl mx-auto">
                 <h2 className="text-4xl font-bold mb-12 text-white text-center">Featured Projects</h2>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 grid-auto-rows-auto items-start">
                     {projects?.map((project: Project) => (
                         <ProjectCard key={project.id} project={project} />
                     ))}
                 </div>
-                
+
                 <div className="mt-16">
                     <h3 className="text-2xl font-bold mb-8 text-white text-center">
-                        Ask Me About These Projects Or Anything Else 🤖
+                        Ask Me About These Projects
                     </h3>
                     <ProjectChatbot />
                 </div>

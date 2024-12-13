@@ -20,7 +20,7 @@ export default function ContactSection() {
                     <a
                         href="/cv.pdf"
                         download="daniel-fenster-cv.pdf"
-                        className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white transition-colors"
+                        className="inline-flex items-center gap-2 px-4 py-4 rounded-full border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white transition-colors"
                     >
                         <Download className="w-5 h-5" />
                         Download CV

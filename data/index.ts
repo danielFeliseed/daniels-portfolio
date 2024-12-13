@@ -3,7 +3,7 @@ export const projects = [
       id: 1,
       title: "Project Management System",
       description: "Integrated budget management system that visualizes project budgets in real-time and detects budget overrun risks by connecting with multiple task management APIs.",
-      tech: ["Next.js", "React", "TypeScript", "Laravel", "MySQL", "Stripe", "AWS"],
+      tech: ["Next.js", "React", "TypeScript", "Laravel", "MySQL", "Stripe"],
       features: [
         "Real-time budget tracking and alerts",
         "Subscription plans (Basic, Standard, Premium)",
