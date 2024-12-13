@@ -26,7 +26,7 @@ export default function ProjectChatbot() {
     setIsLoading(true);
 
     try {
-      const response = await fetch('/api/chat', {
+      const response = await fetch('/api/AiChat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
