@@ -2,11 +2,11 @@
 import React, { useState } from 'react';
 import { Send, Bot, User, Loader2 } from 'lucide-react';
 
-const ProjectChatbot = () => {
+export default function ProjectChatbot() {
   const [messages, setMessages] = useState([
     {
       role: 'assistant',
-      content: "Hi! I'm an AI assistant specializing in Daniel's portfolio and projects. I can tell you about his experience with React, Next.js, Laravel, and various other technologies, as well as specific projects like the Project Management System, Publishing Media CMS, and HR Development platform. What would you like to know?"
+      content: "Hi! I'm an AI assistant specializing in Daniel's portfolio, projects and skills. I can tell you about his experience with React, Next.js, Laravel, PHP and various other technologies, as well as specific projects. What would you like to know?"
     }
   ]);
   const [input, setInput] = useState('');
@@ -58,7 +58,7 @@ const ProjectChatbot = () => {
       <div className="bg-gray-800 p-4 border-b border-gray-700">
         <div className="flex items-center gap-2">
           <Bot className="w-6 h-6 text-blue-400" />
-          <h3 className="text-lg font-semibold text-white">Project Assistant</h3>
+          <h3 className="text-lg font-semibold text-white">Portfolio Assistant</h3>
         </div>
       </div>
 
@@ -120,5 +120,3 @@ const ProjectChatbot = () => {
     </div>
   );
 };
-
-export default ProjectChatbot;

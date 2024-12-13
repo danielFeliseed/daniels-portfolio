@@ -1,6 +1,16 @@
 import { NextResponse } from 'next/server';
 import Anthropic from '@anthropic-ai/sdk';
 
+interface ChatMessage {
+  role: 'user' | 'assistant';
+  content: string;
+}
+
+interface ApiError {
+  message: string;
+  error?: string;
+}
+
 const PORTFOLIO_CONTEXT = `You are an AI assistant who is an expert on Daniel Fenster's portfolio and projects. Here are the key details about his work:
 
 CORE EXPERTISE:
@@ -42,7 +52,7 @@ KEY PROJECTS:
 Technical Skills:
 - Frameworks: React, Next.js (2 years, advanced), Laravel (2 years, advanced), Vue.js (1 year)
 - Languages: PHP, JavaScript, TypeScript (2 years each, expert level)
-- Databases: MySQL (2 years), PostgreSQL (1 year)
+- Databases: MySQL (2 years)
 - Tools: AWS, Docker, Git, Stripe
 
 You should speak professionally but naturally about these projects and technologies, providing specific technical details when asked. Focus on the concrete achievements and technical implementations while being able to explain concepts clearly to both technical and non-technical audiences.`.trim();
@@ -78,7 +88,7 @@ export async function POST(request: Request) {
       );
     }
 
-    const conversationWithContext = [
+    const conversationWithContext: ChatMessage[] = [
       {
         role: 'assistant',
         content: PORTFOLIO_CONTEXT
@@ -95,21 +105,24 @@ export async function POST(request: Request) {
 
     const response = await anthropic.messages.create({
       model: 'claude-3-opus-20240229',
-      max_tokens: 100,
+      max_tokens: 50,
       messages: conversationWithContext,
       temperature: 0.7,
     });
 
+    const textContent = response.content[0] as { type: string; text: string };
+
     return NextResponse.json({
-      message: response.content[0]?.text.trim()
+      message: textContent?.text?.trim() || 'No response generated'
     });
 
-  } catch (error) {
+  } catch (error: unknown) {
+    const apiError = error as ApiError;
     console.error('Detailed error:', error);
     return NextResponse.json(
       {
         message: 'Internal server error',
-        error: error.message
+        error: apiError.message
       },
       { status: 500 }
     );
