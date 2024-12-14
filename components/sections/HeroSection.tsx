@@ -127,7 +127,7 @@ export default function HeroSection() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 2.5 }}
-                className="absolute bottom-6 flex flex-col items-center gap-8"
+                className="relative md:absolute md:bottom-16 md:mt-0 z-10 mt-8 items-center flex flex-col"
             >
                 <div className="flex gap-6">
                     {[
