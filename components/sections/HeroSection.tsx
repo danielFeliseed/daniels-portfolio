@@ -11,11 +11,8 @@ export default function HeroSection() {
 
     return (
         <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-6">
-            {/* Enhanced background with multiple gradients */}
             <div className="absolute inset-0 bg-gradient-to-b from-blue-900/20 via-gray-900 to-gray-900" />
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/20 via-transparent to-transparent" />
-
-            {/* Animated background dots/grid (optional) */}
             <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:radial-gradient(white,transparent_85%)] opacity-20" />
 
             <div className="relative z-10 text-center max-w-4xl mx-auto">
@@ -126,7 +123,6 @@ export default function HeroSection() {
                 </motion.div>
             </div>
 
-            {/* Social Links with enhanced styling */}
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
