@@ -71,6 +71,7 @@ export async function POST(request: Request) {
     try {
       body = await request.json();
     } catch (e) {
+      console.error('Error:', e);
       throw new Error('Invalid request body');
     }
 
