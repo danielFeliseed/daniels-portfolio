@@ -36,7 +36,7 @@ export default function TypingText({ text, delay = 0, speed = 50, className = ""
         } else {
             startTyping();
         }
-    }, [delay]);
+    }, [delay, text, speed]);
 
     useEffect(() => {
         setDisplayedText(text.substring(0, currentIndex + 1));

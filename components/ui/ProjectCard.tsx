@@ -107,7 +107,7 @@ export default function ProjectCard({ project }: { project: Project }) {
                         >
                             <div className="space-y-4 mt-4">
                                 <div className="space-y-2">
-                                    <h4 className="text-lg font-semibold text-blue-400">{projectT.keyFeatures}</h4>
+                                    <h4 className="text-lg font-semibold text-blue-400">{t.projects.keyFeatures}</h4>
                                     <ul className="space-y-1">
                                         {projectT.features?.map((feature: string, index: number) => (
                                             <motion.li

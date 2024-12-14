@@ -1,4 +1,3 @@
-// locales/translations.ts
 export const translations = {
     ja: {
         nav: {

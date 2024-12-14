@@ -26,12 +26,13 @@ export default function HeroSection() {
                 <motion.h2
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 0.5 }}
+                    transition={{ delay: 0.2 }}
                     className="text-4xl md:text-6xl font-bold mb-6"
                 >
                     <TypingText
                         text={t.hero.title}
                         className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent"
+                        delay={200}
                         speed={80}
                     />
                 </motion.h2>
@@ -39,20 +40,20 @@ export default function HeroSection() {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 2 }}
+                    transition={{ delay: 1.5 }}
                 >
                     <TypingText
                         text={t.hero.subtitle}
                         className="text-xl md:text-2xl text-gray-300 mb-8 block max-w-2xl mx-auto"
-                        delay={2000}
-                        speed={60}
+                        delay={1000}
+                        speed={70}
                     />
                 </motion.div>
 
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 6 }}
+                    transition={{ delay: 0 }}
                     className="flex justify-center gap-4"
                 >
                     <a
@@ -73,7 +74,7 @@ export default function HeroSection() {
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 6.5 }}
+                transition={{ delay: 5 }}
                 className="absolute bottom-8 flex gap-6"
             >
                 <a

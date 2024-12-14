@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useLanguageStore } from '@/stores/languageStore';
 import { translations } from '@/locales/translations';
 import { Send, Bot, User, Loader2 } from 'lucide-react';
@@ -7,14 +7,19 @@ import { Send, Bot, User, Loader2 } from 'lucide-react';
 export default function ProjectChatbot() {
     const { language } = useLanguageStore();
     const t = translations[language];
-    const [messages, setMessages] = useState([
-        {
-            role: 'assistant',
-            content: t.chatbot.greeting
-        }
-    ]);
     const [input, setInput] = useState('');
     const [isLoading, setIsLoading] = useState(false);
+    const [messages, setMessages] = useState<Array<{ role: string; content: string }>>([{
+        role: 'assistant',
+        content: t.chatbot.greeting
+    }]);
+
+    useEffect(() => {
+        setMessages(prevMessages => [
+            { role: 'assistant', content: t.chatbot.greeting },
+            ...prevMessages.slice(1)
+        ]);
+    }, [language, t.chatbot.greeting]);
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
