@@ -79,7 +79,7 @@ export default function HeroSection() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 1.5 }}
-                    className="mb-12 relative"
+                    className="mb-8 sm:mb-10 md:mb-12 relative"
                 >
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-900/10 to-transparent" />
                     <div className="relative px-3 py-2 rounded-lg">
@@ -102,11 +102,11 @@ export default function HeroSection() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 2 }}
-                    className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6"
+                    className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6"
                 >
                     <motion.a
                         href="#projects"
-                        className="group relative px-8 py-3 rounded-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 transition-all duration-200 shadow-lg hover:shadow-blue-500/25"
+                        className="group relative w-48 text-center px-8 py-3 rounded-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 transition-all duration-200 shadow-lg hover:shadow-blue-500/25"
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                     >
@@ -114,7 +114,7 @@ export default function HeroSection() {
                     </motion.a>
                     <motion.a
                         href="#contact"
-                        className="group px-8 py-3 rounded-full border border-white/10 hover:border-white/20 bg-white/5 hover:bg-white/10 transition-all duration-200 backdrop-blur-sm"
+                        className="group w-48 text-center px-8 py-3 rounded-full border border-white/10 hover:border-white/20 bg-white/5 hover:bg-white/10 transition-all duration-200 backdrop-blur-sm"
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                     >
@@ -127,7 +127,7 @@ export default function HeroSection() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 2.5 }}
-                className="absolute bottom-12 flex flex-col items-center gap-8"
+                className="absolute bottom-6 flex flex-col items-center gap-8"
             >
                 <div className="flex gap-6">
                     {[
