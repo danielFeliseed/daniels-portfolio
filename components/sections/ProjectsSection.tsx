@@ -20,9 +20,6 @@ export default function ProjectsSection() {
                 </div>
 
                 <div className="mt-16">
-                    <h3 className="text-xl sm:text-2xl font-bold mb-8 text-white text-center">
-                        {t.chatbot.title}
-                    </h3>
                     <ProjectChatbot />
                 </div>
             </div>
