@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail, ChevronDown } from 'lucide-react';
 import { socialLinks } from '@/data';
 import { useLanguageStore } from '@/stores/languageStore';
 import { translations } from '@/locales/translations';
@@ -8,97 +8,156 @@ import TypingText from '../ui/TypingText';
 export default function HeroSection() {
     const { language } = useLanguageStore();
     const t = translations[language];
-    return (
-        <section className="relative h-screen flex items-center justify-center overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-b from-blue-900/20 to-gray-900" />
 
-            <div className="relative z-10 text-center px-4">
+    return (
+        <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-6">
+            {/* Enhanced background with multiple gradients */}
+            <div className="absolute inset-0 bg-gradient-to-b from-blue-900/20 via-gray-900 to-gray-900" />
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/20 via-transparent to-transparent" />
+
+            {/* Animated background dots/grid (optional) */}
+            <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:radial-gradient(white,transparent_85%)] opacity-20" />
+
+            <div className="relative z-10 text-center max-w-4xl mx-auto">
                 <motion.div
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="mb-4"
+                    className="space-y-2 mb-8"
                 >
-                    <h1 className="text-4xl md:text-5xl font-bold text-white">
-                        {t.hero.h1}
-                    </h1>
+                    {language === 'ja' ? (
+                        <motion.p
+                            className="text-3xl sm:text-4xl md:text-5xl font-bold"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                        >
+                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
+                                {t.hero.name}
+                            </span>
+                        </motion.p>
+                    ) : (
+                        <>
+                            <motion.h1
+                                className="text-2xl sm:text-3xl font-medium text-blue-400"
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                            >
+                                {t.hero.greeting}
+                            </motion.h1>
+                            <motion.p
+                                className="text-3xl sm:text-4xl md:text-5xl font-bold"
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                            >
+                                <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
+                                    {t.hero.name}
+                                </span>
+                            </motion.p>
+                        </>
+                    )}
                 </motion.div>
 
-                <motion.h2
+                <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.2 }}
-                    className="text-4xl md:text-6xl font-bold mb-6"
+                    className="mb-8 relative"
                 >
-                    <TypingText
-                        text={t.hero.title}
-                        className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent"
-                        delay={200}
-                        speed={80}
-                    />
-                </motion.h2>
+                    <div className="relative">
+                        <TypingText
+                            text={t.hero.title}
+                            className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400 bg-clip-text text-transparent inline-block"
+                            delay={200}
+                            speed={80}
+                        />
+                        <motion.div
+                            className="h-px w-24 mx-auto mt-4 bg-gradient-to-r from-transparent via-blue-500 to-transparent"
+                            initial={{ width: 0 }}
+                            animate={{ width: 96 }}
+                            transition={{ delay: 1, duration: 0.8 }}
+                        />
+                    </div>
+                </motion.div>
 
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 1.5 }}
+                    className="mb-12 relative"
                 >
-                    <TypingText
-                        text={t.hero.subtitle}
-                        className="text-xl md:text-2xl text-gray-300 mb-8 block max-w-2xl mx-auto"
-                        delay={1000}
-                        speed={70}
-                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-900/10 to-transparent" />
+                    <div className="relative px-3 py-2 rounded-lg">
+                        <TypingText
+                            text={t.hero.subtitle}
+                            className="text-sm sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed"
+                            delay={1000}
+                            speed={70}
+                        />
+                        <motion.div
+                            className="absolute -inset-x-6 sm:-inset-x-10 inset-y-0 border-x border-blue-500/5"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 2 }}
+                        />
+                    </div>
                 </motion.div>
 
                 <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0 }}
-                    className="flex justify-center gap-4"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 2 }}
+                    className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6"
                 >
-                    <a
+                    <motion.a
                         href="#projects"
-                        className="px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-700 transition-colors"
+                        className="group relative px-8 py-3 rounded-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 transition-all duration-200 shadow-lg hover:shadow-blue-500/25"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
                     >
-                        {t.hero.viewProjects}
-                    </a>
-                    <a
+                        <span className="relative z-10">{t.hero.viewProjects}</span>
+                    </motion.a>
+                    <motion.a
                         href="#contact"
-                        className="px-6 py-3 rounded-full border border-white/20 hover:bg-white/10 transition-colors"
+                        className="group px-8 py-3 rounded-full border border-white/10 hover:border-white/20 bg-white/5 hover:bg-white/10 transition-all duration-200 backdrop-blur-sm"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
                     >
                         {t.hero.contactMe}
-                    </a>
+                    </motion.a>
                 </motion.div>
             </div>
 
+            {/* Social Links with enhanced styling */}
             <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 5 }}
-                className="absolute bottom-8 flex gap-6"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 2.5 }}
+                className="absolute bottom-12 flex flex-col items-center gap-8"
             >
-                <a
-                    href={socialLinks.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-white transition-colors"
+                <div className="flex gap-6">
+                    {[
+                        { icon: <Github className="w-5 h-5" />, href: socialLinks.github },
+                        { icon: <Linkedin className="w-5 h-5" />, href: socialLinks.linkedin },
+                        { icon: <Mail className="w-5 h-5" />, href: `mailto:${socialLinks.email}` }
+                    ].map((social, index) => (
+                        <motion.a
+                            key={index}
+                            href={social.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-gray-400 hover:text-white p-2 hover:bg-white/10 rounded-full transition-all duration-200"
+                            whileHover={{ y: -2 }}
+                            whileTap={{ scale: 0.95 }}
+                        >
+                            {social.icon}
+                        </motion.a>
+                    ))}
+                </div>
+                <motion.div
+                    animate={{ y: [0, 8, 0] }}
+                    transition={{ repeat: Infinity, duration: 2 }}
                 >
-                    <Github className="w-6 h-6" />
-                </a>
-                <a
-                    href={socialLinks.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-white transition-colors"
-                >
-                    <Linkedin className="w-6 h-6" />
-                </a>
-                <a
-                    href={`mailto:${socialLinks.email}`}
-                    className="text-gray-400 hover:text-white transition-colors"
-                >
-                    <Mail className="w-6 h-6" />
-                </a>
+                    <ChevronDown className="w-6 h-6 text-gray-400" />
+                </motion.div>
             </motion.div>
         </section>
     );

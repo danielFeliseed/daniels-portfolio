@@ -6,7 +6,8 @@ export const translations = {
             contact: 'お問い合わせ'
         },
         hero: {
-            h1: 'こんにちは、ダニエルと申します。',
+            greeting: 'こんにちは',
+            name: 'フェンスター ダニエル',
             title: 'フルスタックエンジニアです',
             subtitle: 'TypeScript、React、PHP、Laravelを使用してモダンなウェブ体験を構築しています。',
             viewProjects: 'プロジェクトを見る',
@@ -114,7 +115,8 @@ export const translations = {
             contact: 'Contact'
         },
         hero: {
-            h1: 'Hi, I\'m Daniel Fenster',
+            greeting: 'Hello, I\'m',
+            name: 'Daniel Fenster',
             title: 'Full Stack Developer',
             subtitle: 'Building modern web experiences with TypeScript, React, PHP, and Laravel',
             viewProjects: 'View Projects',
