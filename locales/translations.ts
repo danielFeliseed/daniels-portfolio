@@ -58,7 +58,7 @@ export const translations = {
             }
         },
         chatbot: {
-            title: "AIポートフォリオアシスタントにダニエルの経験やスキルについて尋ねる",
+            title: "AIポートフォリオアシスタント",
             greeting: "こんにちは！私はダニエルのポートフォリオ、プロジェクト、スキルに特化したAIアシスタントです。React、Next.js、Laravel、PHPなどの経験や特定のプロジェクトについてお話しできます。何を知りたいですか？",
             errorMessage: "申し訳ありませんが、トークンが切れました。後でもう一度お試しください。",
             thinking: "考え中...",
@@ -167,7 +167,7 @@ export const translations = {
             }
         },
         chatbot: {
-            title: "Ask AI Portfolio Assistant About Daniel's Experience and Skills",
+            title: "AI Portfolio Assistant",
             greeting: "Hi! I'm an AI assistant specializing in Daniel's portfolio, projects and skills. I can tell you about his experience with React, Next.js, Laravel, PHP and various other technologies, as well as specific projects. What would you like to know?",
             errorMessage: "I apologize, but I have run out of tokens for now. Please try again later.",
             thinking: "Thinking...",
