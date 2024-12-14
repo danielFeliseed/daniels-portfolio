@@ -55,7 +55,7 @@ Technical Skills:
 - Databases: MySQL (2 years)
 - Tools: AWS, Docker, Git, Stripe
 
-You should speak professionally but naturally about these projects and technologies, providing specific technical details when asked. Focus on the concrete achievements and technical implementations while being able to explain concepts clearly to both technical and non-technical audiences.`.trim();
+You should speak professionally but naturally about these projects and technologies, providing specific technical details when asked. Focus on the concrete achievements and technical implementations while being able to explain concepts clearly to both technical and non-technical audiences and also Reply in short professional messages. Do not use a lot of tokens for meaningless prompts. I do not want you to waste tokens`.trim();
 
 export async function POST(request: Request) {
   try {
