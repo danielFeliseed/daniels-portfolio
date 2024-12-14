@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Daniel Fenster's Portfolio
 
-## Getting Started
+A modern, responsive portfolio website built with Next.js 15 and React 19, featuring AI integration and bilingual support.
 
-First, run the development server:
+## 🌟 Features
 
+- **Modern Stack**: Built with Next.js 15, React 19, and TypeScript
+- **AI Integration**: Integrated Claude AI for interactive portfolio exploration
+- **Bilingual Support**: Full English and Japanese language support
+- **Responsive Design**: Optimized for all device sizes
+- **Interactive UI**: Smooth animations using Framer Motion
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 15, React 19
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **State Management**: Zustand
+- **Animations**: Framer Motion
+- **AI Integration**: Claude AI (Anthropic)
+- **Deployment**: Vercel
+
+## 🚀 Getting Started
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/yourusername/portfolio.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Set up environment variables:
+```bash
+cp .env.example .env.local
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Add your Anthropic API key to `.env.local`:
+```
+ANTHROPIC_API_KEY=your_api_key_here
+```
 
-## Learn More
+5. Run the development server:
+```bash
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 📁 Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+portfolio/
+├── app/              # Next.js app directory
+├── components/       # React components
+├── stores/          # Zustand stores
+├── types/           # TypeScript types
+├── data/            # Static data
+├── locales/         # Translation files
+└── public/          # Static assets
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🌐 Deployment
 
-## Deploy on Vercel
+The project is optimized for deployment on Vercel. You can deploy your own version with a single click:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/yourusername/portfolio)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📜 License
+
+MIT License - feel free to use this project as inspiration for your own portfolio!
+
+## 🙏 Acknowledgments
+
+- [Anthropic](https://www.anthropic.com/) for Claude AI
+- [Vercel](https://vercel.com) for hosting
+- All the amazing open-source libraries used in this project
