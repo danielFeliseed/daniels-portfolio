@@ -1,25 +1,40 @@
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail } from 'lucide-react';
 import { socialLinks } from '@/data';
+import { useLanguageStore } from '@/stores/languageStore';
+import { translations } from '@/locales/translations';
 import TypingText from '../ui/TypingText';
 
 export default function HeroSection() {
+    const { language } = useLanguageStore();
+    const t = translations[language];
     return (
         <section className="relative h-screen flex items-center justify-center overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-b from-blue-900/20 to-gray-900" />
 
             <div className="relative z-10 text-center px-4">
-                <motion.h1
+                <motion.div
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="mb-4"
+                >
+                    <h1 className="text-4xl md:text-5xl font-bold text-white">
+                        {t.hero.h1}
+                    </h1>
+                </motion.div>
+
+                <motion.h2
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    className="text-5xl md:text-7xl font-bold mb-6"
+                    transition={{ delay: 0.5 }}
+                    className="text-4xl md:text-6xl font-bold mb-6"
                 >
                     <TypingText
-                        text="Full Stack Developer"
+                        text={t.hero.title}
                         className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent"
                         speed={80}
                     />
-                </motion.h1>
+                </motion.h2>
 
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -27,7 +42,7 @@ export default function HeroSection() {
                     transition={{ delay: 2 }}
                 >
                     <TypingText
-                        text="Building modern web experiences with Next.js, React, and Laravel"
+                        text={t.hero.subtitle}
                         className="text-xl md:text-2xl text-gray-300 mb-8 block max-w-2xl mx-auto"
                         delay={2000}
                         speed={60}
@@ -44,13 +59,13 @@ export default function HeroSection() {
                         href="#projects"
                         className="px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-700 transition-colors"
                     >
-                        View Projects
+                        {t.hero.viewProjects}
                     </a>
                     <a
                         href="#contact"
                         className="px-6 py-3 rounded-full border border-white/20 hover:bg-white/10 transition-colors"
                     >
-                        Contact Me
+                        {t.hero.contactMe}
                     </a>
                 </motion.div>
             </div>
