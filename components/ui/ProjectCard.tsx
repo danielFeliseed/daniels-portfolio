@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, Calendar, Star } from 'lucide-react';
+import { ChevronDown, Calendar, Star, Briefcase, Link } from 'lucide-react';
 import { useState } from 'react';
 import { Project } from '../../types';
 import { useLanguageStore } from '@/stores/languageStore';
@@ -13,6 +13,10 @@ export default function ProjectCard({ project }: { project: Project }) {
     const [isExpanded, setIsExpanded] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
 
+    // Extract role and url safely
+    const role = projectT.role; 
+    const url = 'url' in projectT ? projectT.url : undefined;
+
     const cardVariants = {
         hover: {
             scale: 1.02,
@@ -24,7 +28,6 @@ export default function ProjectCard({ project }: { project: Project }) {
     };
 
     return (
-
         <motion.div
             initial="initial"
             whileHover="hover"
@@ -52,7 +55,7 @@ export default function ProjectCard({ project }: { project: Project }) {
                         <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent text-center mb-3">
                             {projectT.title}
                         </h3>
-                        <div className="flex justify-center">
+                        <div className="flex justify-center mb-2">
                             <motion.div
                                 className="inline-flex items-center gap-2 text-sm bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-full px-4 py-1.5"
                             >
@@ -60,13 +63,27 @@ export default function ProjectCard({ project }: { project: Project }) {
                                 <span className="text-gray-300 font-medium">{projectT.period}</span>
                             </motion.div>
                         </div>
+                        {role && (
+                            <div className="flex justify-center items-center gap-2 text-sm text-gray-400">
+                                <Briefcase className="w-4 h-4 text-purple-400" />
+                                <span>{role}</span>
+                            </div>
+                        )}
                     </div>
 
                     {/* Desktop layout */}
-                    <div className="hidden sm:flex sm:justify-between sm:items-center">
-                        <h3 className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                            {projectT.title}
-                        </h3>
+                    <div className="hidden sm:flex sm:justify-between sm:items-start">
+                        <div>
+                            <h3 className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                                {projectT.title}
+                            </h3>
+                            {role && (
+                                <div className="mt-1 flex items-center gap-2 text-sm text-gray-400">
+                                    <Briefcase className="w-4 h-4 text-purple-400" />
+                                    <span>{role}</span>
+                                </div>
+                            )}
+                        </div>
                         <motion.div
                             animate={{
                                 x: isHovered ? 0 : 10,
@@ -95,6 +112,21 @@ export default function ProjectCard({ project }: { project: Project }) {
                         </motion.span>
                     ))}
                 </div>
+
+                {url && (
+                    <div className="mt-4 mb-4">
+                        <a
+                            href={url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 text-sm text-blue-400 hover:text-blue-300 transition-colors group"
+                            aria-label={`Visit project ${projectT.title}`}
+                        >
+                            <Link className="w-4 h-4 group-hover:animate-pulse" />
+                            <span>Visit Project</span>
+                        </a>
+                    </div>
+                )}
 
                 <AnimatePresence>
                     {isExpanded && (

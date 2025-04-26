@@ -9,7 +9,7 @@ export const translations = {
             greeting: 'こんにちは',
             name: 'フェンスター ダニエル',
             title: 'フルスタックエンジニアです',
-            subtitle: 'TypeScript、React、PHP、Laravelを使用してモダンなウェブ体験を構築しています。',
+            subtitle: 'PHP、Laravel、TypeScript、React、Next.js を用いて、NoBiのようなモダンなSaaSソリューションを含むウェブ体験を構築しています。',
             viewProjects: 'プロジェクトを見る',
             contactMe: 'お問い合わせ'
         },
@@ -20,6 +20,29 @@ export const translations = {
             viewLess: '閉じる',
             projectItems: {
                 1: {
+                    title: "NoBi",
+                    description: "教師が生徒を管理し、エンゲージメントを高める方法を革新する革新的な教育プラットフォーム。この包括的なSaaSソリューションは、宿題管理を合理化し、学習体験をパーソナライズし、直感的なインターフェースを通じて教育をゲーミフィケーションします。",
+                    features: [
+                        "包括的なクラスおよび生徒管理システム",
+                        "レベルに応じた学習教材のためのAIを活用したコンテンツ生成",
+                        "多言語翻訳サポート付きテキスト読み上げ機能",
+                        "連続記録、ポイント、リーダーボードを備えたゲーミフィケーションシステム",
+                        "宿題提出状況を追跡するためのインタラクティブカレンダー",
+                        "Stripe統合による複数階層のサブスクリプションモデル"
+                    ],
+                    period: "2025年1月 - 現在",
+                    highlight: true,
+                    role: "単独開発者 兼 プロダクトオーナー",
+                    url: "https://nobi.jp",
+                    achievements: [
+                        "コンセプトから展開までのプラットフォーム全体のアーキテクチャを設計・実装",
+                        "教育コンテンツ生成のための高度なAI機能を統合",
+                        "複数の価格帯を持つスケーラブルなサブスクリプションモデルを構築",
+                        "生徒の参加率を60%向上させた魅力的なゲーミフィケーションシステムを作成",
+                        "リアルタイムの進捗追跡および通知システムを実装"
+                    ]
+                },
+                2: {
                     title: "プロジェクト管理システム",
                     description: "複数のタスク管理APIと連携し、リアルタイムでプロジェクトの予算を可視化し、予算超過リスクを検知する統合予算管理システム。",
                     features: [
@@ -29,9 +52,10 @@ export const translations = {
                         "モジュラーAPIシステム",
                         "直感的なダッシュボード"
                     ],
-                    period: "2024年6月 - 現在"
+                    period: "2024年6月 - 現在",
+                    role: "テックリード"
                 },
-                2: {
+                3: {
                     title: "出版メディアCMS",
                     description: "既存の社内システムと公式ウェブサイトを統合する戦略的システム再開発プロジェクト。コンテンツ管理の効率化とUX改善に重点を置いています。",
                     features: [
@@ -41,9 +65,10 @@ export const translations = {
                         "動的コンテンツ管理",
                         "サーバーリソースの最適化"
                     ],
-                    period: "2024年3月 - 現在"
+                    period: "2024年3月 - 現在",
+                    role: "フルスタックエンジニア"
                 },
-                3: {
+                4: {
                     title: "人材育成プラットフォーム",
                     description: "AIを活用したリアルタイム学習支援、グループワーク分析、知識定着機能を備えた次世代型新入社員教育支援システム。",
                     features: [
@@ -53,7 +78,8 @@ export const translations = {
                         "学習進捗の可視化",
                         "レスポンシブデザイン"
                     ],
-                    period: "2023年10月 - 2024年3月"
+                    period: "2023年10月 - 2024年3月",
+                    role: "フルスタックエンジニア"
                 }
             }
         },
@@ -118,7 +144,7 @@ export const translations = {
             greeting: 'Hello, I\'m',
             name: 'Daniel Fenster',
             title: 'Full Stack Developer',
-            subtitle: 'Building modern web experiences with TypeScript, React, PHP, and Laravel',
+            subtitle: 'Building modern web experiences, including SaaS platforms like NoBi, using PHP, Laravel, TypeScript, React, and Next.js',
             viewProjects: 'View Projects',
             contactMe: 'Contact Me'
         },
@@ -128,7 +154,31 @@ export const translations = {
             viewMore: 'View More',
             viewLess: 'View Less',
             projectItems: {
+                
                 1: {
+                    title: "NoBi",
+                    description: "An innovative educational platform revolutionizing how teachers manage and engage with students. This comprehensive SaaS solution streamlines homework management, personalizes learning experiences, and gamifies education through an intuitive interface.",
+                    features: [
+                        "Comprehensive class and student management system",
+                        "AI-powered content generation for level-appropriate learning materials",
+                        "Text-to-speech with multilingual translation support",
+                        "Gamification system with streaks, points, and leaderboards",
+                        "Interactive calendar for homework submission tracking",
+                        "Multi-tier subscription model with Stripe integration"
+                    ],
+                    period: "January 2025 - Present",
+                    highlight: true,
+                    role: "Sole Developer & Product Owner",
+                    url: "https://no-bi.jp",
+                    achievements: [
+                        "Designed and implemented the entire platform architecture from concept to deployment",
+                        "Integrated advanced AI capabilities for generating educational content",
+                        "Built a scalable subscription model with multiple pricing tiers",
+                        "Created an engaging gamification system that increased student participation by 60%",
+                        "Implemented real-time progress tracking and notification systems"
+                    ]
+                },
+                2: {
                     title: "Project Management System",
                     description: "Integrated budget management system that visualizes project budgets in real-time and detects budget overrun risks by connecting with multiple task management APIs.",
                     features: [
@@ -138,9 +188,10 @@ export const translations = {
                         "Modular API integration system",
                         "Intuitive dashboard interface"
                     ],
-                    period: "June 2024 - Present"
+                    period: "June 2024 - Present",
+                    role: "Tech Lead"
                 },
-                2: {
+                3: {
                     title: "Publishing Media CMS",
                     description: "Strategic system redevelopment project integrating existing internal systems with official website, focusing on content management efficiency and UX improvement.",
                     features: [
@@ -150,9 +201,10 @@ export const translations = {
                         "Dynamic content management",
                         "Server resource optimization"
                     ],
-                    period: "March 2024 - Present"
+                    period: "March 2024 - Present",
+                    role: "Full Stack Developer"
                 },
-                3: {
+                4: {
                     title: "HR Training Platform",
                     description: "Next-generation educational support system for new employees featuring AI-powered real-time learning support, group work analysis, and knowledge retention features.",
                     features: [
@@ -162,7 +214,8 @@ export const translations = {
                         "Learning progress visualization",
                         "Responsive design"
                     ],
-                    period: "October 2023 - March 2024"
+                    period: "October 2023 - March 2024",
+                    role: "Full Stack Developer"
                 }
             }
         },

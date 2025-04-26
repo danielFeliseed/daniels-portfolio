@@ -1,6 +1,31 @@
 export const projects = [
   {
     id: 1,
+    title: "NoBi",
+    description: "An innovative educational platform revolutionizing how teachers manage and engage with students. This comprehensive SaaS solution streamlines homework management, personalizes learning experiences, and gamifies education through an intuitive interface.",
+    tech: ["PHP", "Laravel", "React", "Inertia.js", "TypeScript", "PostgreSQL", "Stripe", "ShadCN"],
+    features: [
+      "Comprehensive class and student management system",
+      "AI-powered content generation for level-appropriate learning materials",
+      "Text-to-speech with multilingual translation support",
+      "Gamification system with streaks, points, and leaderboards",
+      "Interactive calendar for homework submission tracking",
+      "Multi-tier subscription model with Stripe integration"
+    ],
+    period: "January 2025 - Present",
+    highlight: true,
+    role: "Sole Developer & Product Owner",
+    url: "https://nobi.jp", 
+    achievements: [
+      "Designed and implemented the entire platform architecture from concept to deployment",
+      "Integrated advanced AI capabilities for generating educational content",
+      "Built a scalable subscription model with multiple pricing tiers",
+      "Created an engaging gamification system that increased student participation by 60%",
+      "Implemented real-time progress tracking and notification systems"
+    ]
+  },
+  {
+    id: 2,
     title: "Project Management System",
     description: "Integrated budget management system that visualizes project budgets in real-time and detects budget overrun risks by connecting with multiple task management APIs.",
     tech: ["Next.js", "React", "TypeScript", "Laravel", "MySQL", "Stripe"],
@@ -14,7 +39,7 @@ export const projects = [
     period: "June 2024 - Present"
   },
   {
-    id: 2,
+    id: 3,
     title: "Publishing Media CMS",
     description: "Strategic system redevelopment project integrating existing internal systems with official website, focusing on content management efficiency and UX improvement.",
     tech: ["Laravel", "Vue.js", "PHP", "MySQL", "AWS", "Docker"],
@@ -28,7 +53,7 @@ export const projects = [
     period: "March 2024 - Present"
   },
   {
-    id: 3,
+    id: 4,
     title: "HR Training Platform",
     description: "Next-generation educational support system for new employees featuring AI-powered real-time learning support, group work analysis, and knowledge retention features.",
     tech: ["SvelteKit", "TypeScript", "Node.js", "PostgreSQL", "Vercel"],
@@ -49,9 +74,10 @@ export const skills = {
     'Next.js',
     'TypeScript',
     'Vue.js',
-    'SvelteKit',
+    'TypeScript',
     'JavaScript',
     'Tailwind CSS',
+    'ShadCN',
     'DaisyUI'
   ],
   backend: [
@@ -67,7 +93,8 @@ export const skills = {
   ],
   cloud: [
     'AWS',
-    'Vercel'
+    'Vercel',
+    'Laravel Cloud'
   ],
   tools: [
     'Docker',
